@@ -1,6 +1,6 @@
 # Ramos syntax grammar
 
-TextMate-compatible highlighting for Ramos 0.14, with scope `source.ramos`
+TextMate-compatible highlighting for Ramos 0.15, with scope `source.ramos`
 and extension `.ramos`. The grammar, editor configuration and newly authored
 line-statistics tool in this repository are MIT licensed.
 
