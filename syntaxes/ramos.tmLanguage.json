@@ -1,0 +1,126 @@
+{
+  "name": "Ramos",
+  "scopeName": "source.ramos",
+  "fileTypes": [
+    "ramos"
+  ],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#function-declaration"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#intrinsics"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#function-call"
+    },
+    {
+      "include": "#punctuation"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.ramos",
+          "begin": "//",
+          "end": "$"
+        },
+        {
+          "name": "comment.block.ramos",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.ramos",
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.ramos"
+        }
+      },
+      "end": "\"|$",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.ramos"
+        }
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.ramos",
+          "match": "\\\\[ntr0\"\\\\]"
+        },
+        {
+          "name": "invalid.illegal.escape.ramos",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "function-declaration": {
+      "match": "\\b(fn)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+      "captures": {
+        "1": {
+          "name": "storage.type.function.ramos"
+        },
+        "2": {
+          "name": "entity.name.function.ramos"
+        }
+      }
+    },
+    "function-call": {
+      "name": "entity.name.function.call.ramos",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*(?=\\s*\\()"
+    },
+    "types": {
+      "name": "storage.type.ramos",
+      "match": "\\b(int64|bool|bytes|void)\\b"
+    },
+    "constants": {
+      "name": "constant.language.boolean.ramos",
+      "match": "\\b(true|false)\\b"
+    },
+    "keywords": {
+      "name": "keyword.control.ramos",
+      "match": "\\b(let|var|if|else|while|break|continue|return)\\b"
+    },
+    "intrinsics": {
+      "name": "support.function.builtin.ramos",
+      "match": "\\b(print|buffer|buffer_len|buffer_get|buffer_set|arg_count|arg|read_file|write_file|io_error|stderr|platform|exit|read_line|stdin_eof|int_to_text|text_to_int|parse_error)\\b(?=\\s*\\()"
+    },
+    "operators": {
+      "name": "keyword.operator.ramos",
+      "match": "&&|\\|\\||==|!=|<=|>=|->|[+*/%!=<>-]"
+    },
+    "numbers": {
+      "name": "constant.numeric.integer.decimal.ramos",
+      "match": "\\b[0-9]+\\b"
+    },
+    "punctuation": {
+      "name": "punctuation.separator.ramos",
+      "match": "[(){}:,]"
+    }
+  }
+}
