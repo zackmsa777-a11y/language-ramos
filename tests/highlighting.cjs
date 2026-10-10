@@ -41,6 +41,18 @@ async function main() {
   check('/* first /* inner */ print(1)', 'print', 'support.function.builtin.ramos');
   check('combine(a, b)', 'combine', 'entity.name.function.call.ramos');
   check('int_to_text(-9223372036854775808)', 'int_to_text', 'support.function.builtin.ramos');
+  check('for i in -2..n {', 'for', 'keyword.control.ramos');
+  check('for i in -2..n {', 'in', 'keyword.control.ramos');
+  check('for i in -2..n {', '..', 'keyword.operator.ramos');
+  check('n += 2', '+=', 'keyword.operator.ramos');
+  check('n -= 2', '-=', 'keyword.operator.ramos');
+  check('weave "stdlib/gui.ramos"', 'weave', 'keyword.control.ramos');
+  check('struct Point { x: int64 }', 'struct', 'keyword.control.ramos');
+  check('fn greet() -> string {', 'string', 'storage.type.ramos');
+  check('let title = s"Hello"', 's"', 'string.quoted.double.ramos');
+  check('array(int64, 2, 0)', 'array', 'support.function.builtin.ramos');
+  check('collect()', 'collect', 'support.function.builtin.ramos');
+  check('file_close(handle)', 'file_close', 'support.function.builtin.ramos');
   // An invalid unterminated string must not consume later source lines.
   const badString = grammar.tokenizeLine('print("unterminated', tm.INITIAL).ruleStack;
   check('return false', 'return', 'keyword.control.ramos', badString);

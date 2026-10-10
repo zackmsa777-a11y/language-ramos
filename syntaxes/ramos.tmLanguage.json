@@ -56,7 +56,7 @@
     },
     "strings": {
       "name": "string.quoted.double.ramos",
-      "begin": "\"",
+      "begin": "s?\"",
       "beginCaptures": {
         "0": {
           "name": "punctuation.definition.string.begin.ramos"
@@ -96,7 +96,7 @@
     },
     "types": {
       "name": "storage.type.ramos",
-      "match": "\\b(int64|bool|bytes|void)\\b"
+      "match": "\\b(int64|bool|bytes|string|void)\\b"
     },
     "constants": {
       "name": "constant.language.boolean.ramos",
@@ -104,15 +104,15 @@
     },
     "keywords": {
       "name": "keyword.control.ramos",
-      "match": "\\b(let|var|if|else|while|break|continue|return)\\b"
+      "match": "\\b(let|var|if|else|while|for|in|break|continue|return|struct|weave)\\b"
     },
     "intrinsics": {
       "name": "support.function.builtin.ramos",
-      "match": "\\b(print|buffer|buffer_len|buffer_get|buffer_set|arg_count|arg|read_file|write_file|io_error|stderr|platform|exit|read_line|stdin_eof|int_to_text|text_to_int|parse_error)\\b(?=\\s*\\()"
+      "match": "\\b(print|buffer|buffer_len|buffer_get|buffer_set|arg_count|arg|read_file|write_file|io_error|stderr|exit|platform|read_line|stdin_eof|int_to_text|text_to_int|parse_error|collect|memory_used|string|to_bytes|len|slice|array|array_len|array_get|array_set|array_resize|array_empty|_protect_input|stdout|file_open|file_read|file_write|file_eof|file_close|terminal_start|terminal_stop|terminal_width|terminal_height|terminal_key|file_seek|_gui_open|_gui_control|_gui_text|_gui_poll|_gui_close)\\b(?=\\s*\\()"
     },
     "operators": {
       "name": "keyword.operator.ramos",
-      "match": "&&|\\|\\||==|!=|<=|>=|->|[+*/%!=<>-]"
+      "match": "\\+=|-=|\\.\\.|&&|\\|\\||==|!=|<=|>=|->|[+*/%!=<>-]"
     },
     "numbers": {
       "name": "constant.numeric.integer.decimal.ramos",
@@ -120,7 +120,7 @@
     },
     "punctuation": {
       "name": "punctuation.separator.ramos",
-      "match": "[(){}:,]"
+      "match": "[(){}\\[\\]:,.]"
     }
   }
 }
