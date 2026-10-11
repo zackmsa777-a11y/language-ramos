@@ -2,7 +2,7 @@
   "name": "language-ramos",
   "displayName": "Ramos",
   "description": "Ramos language highlighting and editor configuration",
-  "version": "0.15.0",
+  "version": "0.16.0",
   "publisher": "zackmsa777-a11y",
   "license": "MIT",
   "engines": {

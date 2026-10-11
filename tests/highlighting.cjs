@@ -52,7 +52,7 @@ async function main() {
   check('let title = s"Hello"', 's"', 'string.quoted.double.ramos');
   check('array(int64, 2, 0)', 'array', 'support.function.builtin.ramos');
   check('collect()', 'collect', 'support.function.builtin.ramos');
-  for (const name of ['cwd', 'env_get', 'dir_open', 'dir_next', 'dir_kind', 'dir_close', 'dir_create', '_process_run']) {
+  for (const name of ['cwd', 'env_get', 'dir_open', 'dir_next', 'dir_kind', 'dir_close', 'dir_create', '_process_run', '_run_file']) {
     check(name + '()', name, 'support.function.builtin.ramos');
   }
   check('file_close(handle)', 'file_close', 'support.function.builtin.ramos');
