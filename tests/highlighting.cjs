@@ -56,6 +56,14 @@ async function main() {
     check(name + '()', name, 'support.function.builtin.ramos');
   }
   check('file_close(handle)', 'file_close', 'support.function.builtin.ramos');
+  check('fn f(x: float64) -> float64 {', 'float64', 'storage.type.ramos');
+  check('let n = 1.25e+2', '1.25e+2', 'constant.numeric.float.decimal.ramos');
+  check('let n = 1E-3', '1E-3', 'constant.numeric.float.decimal.ramos');
+  check('for i in 1..2 {', '1', 'constant.numeric.integer.decimal.ramos');
+  check('print(1.0)', '1.0', 'constant.numeric.float.decimal.ramos');
+  for (const name of ['float_to_int', 'float_to_text', 'float_sqrt']) {
+    check(name + '()', name, 'support.function.builtin.ramos');
+  }
   // An invalid unterminated string must not consume later source lines.
   const badString = grammar.tokenizeLine('print("unterminated', tm.INITIAL).ruleStack;
   check('return false', 'return', 'keyword.control.ramos', badString);

@@ -1,6 +1,6 @@
 # Ramos syntax grammar
 
-TextMate-compatible highlighting for Ramos 0.17, with scope `source.ramos`
+TextMate-compatible highlighting for Ramos 0.18, with scope `source.ramos`
 and extension `.ramos`. The grammar, editor configuration and newly authored
 line-statistics tool in this repository are MIT licensed.
 
@@ -11,8 +11,10 @@ VSIX...** and select the file, or use `code --install-extension language-ramos.v
 This registers Ramos locally in VS Code and highlights comments, literals,
 keywords, types, function declarations/calls, native intrinsics and operators.
 It provides comment toggling and matching parentheses/braces. It is a syntax
-extension; compilation uses the native Ramos compiler separately. Ramos 0.17
-provides reusable text-builder library helpers and `ramos run file.ramos` and `ramos fmt file.ramos --check`; see
+extension; compilation uses the native Ramos compiler separately. Ramos 0.18
+adds float64 types, decimal/scientific literals and math intrinsics, with
+[float rules](https://github.com/zackmsa777-a11y/ramos/blob/main/docs/math.md). It retains
+reusable text-builder library helpers and `ramos run file.ramos` and `ramos fmt file.ramos --check`; see
 [authoring tools](https://github.com/zackmsa777-a11y/ramos/blob/main/docs/devtools.md).
 
 Develop or package it with `npm ci`, `npm test`, and `npm run package`.
